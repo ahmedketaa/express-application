@@ -1,18 +1,20 @@
 import express from "express";
 import cors from "cors";
 
-import { dbConnection } from "../db/dbConnection.js";
-import { userRoutes } from "../src/modules/users/users.routes.js";
-import { noteRoutes } from "../src/modules/notes/notes.routes.js";
-import { AppError } from "../src/middlewares/AppError.js";
-import { errorHandling } from "../src/middlewares/errorHandling.js";
 import "dotenv/config";
+import { dbConnection } from "./db/dbConnection.js";
+import { userRoutes } from "./src/modules/users/users.routes.js";
+import { noteRoutes } from "./src/modules/notes/notes.routes.js";
+import { errorHandling } from "./src/middlewares/errorHandoing.js";
+import { AppError } from "./src/middlewares/AppError.js";
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-await dbConnection();
+// await dbConnectio();
+await dbConnection()
+
 
 app.use(userRoutes);
 app.use(noteRoutes);
