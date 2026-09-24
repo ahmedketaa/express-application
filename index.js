@@ -6,7 +6,7 @@ import { userRoutes } from "../src/modules/users/users.routes.js";
 import { noteRoutes } from "../src/modules/notes/notes.routes.js";
 import { AppError } from "../src/middlewares/AppError.js";
 import { errorHandling } from "../src/middlewares/errorHandling.js";
-import  "dotenv";
+import "dotenv/config";
 const app = express();
 
 app.use(cors());
